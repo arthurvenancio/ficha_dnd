@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Ficha/imagens/icone_ficha.jpeg" />
+    <link rel="stylesheet" href="/Ficha/css/ficha.css" />
+    <title>Ficha de Personagem</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho-esquerda">
+        <input
+          type="text"
+          id="nome_personagem"
+          placeholder="Nome do Personagem"
+        />
+        <p id="tag_nome">Nome Personagem</p>
+      </div>
+      <div class="cabecalho-direita">
+        <div>
+          <select id="classe">
+            <option value="nulo" selected disabled hidden>
+              Selecione sua classe
+            </option>
+            <option value="artifice">Artíficie</option>
+            <option value="barbaro">Bárbaro</option>
+            <option value="bardo">Bardo</option>
+            <option value="blood_hunter">Blood Hunter</option>
+            <option value="clerigo">Clerigo</option>
+            <option value="druida">Druida</option>
+            <option value="feiticeiro">Feiticeiro</option>
+            <option value="guerreiro">Guerreiro</option>
+            <option value="mago">Mago</option>
+            <option value="monge">Monge</option>
+            <option value="paladino">Paladino</option>
+            <option value="ranger">Ranger</option>
+            <option value="rogue">Rogue</option>
+            <option value="warlock">Warlock</option>
+          </select>
+          <select id="sub-classe">
+            <option value="nulo" selected disabled hidden>
+              Selecione sua sub-classe
+            </option>
+          </select>
+          <input type="number" min="1" max="20" value="1" id="nivel" />
+        </div>
+        <div>
+          <select id="raca">
+            <option value="nulo" selected disabled hidden>
+              Selecione sua raça
+            </option>
+          </select>
+          <select id="sub-raca">
+            <option value="nulo" selected disabled hidden>
+              Selecione sua sub-raça
+            </option>
+          </select>
+          <progress id="exp" value="5" max="100"></progress>
+        </div>
+      </div>
+    </header>
+    <main class="area_principal">
+      <div class="espaco_status_primario">
+        <div class="status_primario">
+          <button class="status_primario_acao" id="str">Força</button>
+          <span id="mod_str">0</span>
+          <input type="number" min="0" max="20" value="10" id="total_str" />
+        </div>
+        <div class="status_primario">
+          <button class="status_primario_acao" id="dex">Destreza</button>
+          <span id="mod_dex">0</span>
+          <input type="number" min="0" max="20" value="10" />
+        </div>
+        <div class="status_primario">
+          <button class="status_primario_acao" id="con">Constituição</button>
+          <span id="mod_con">0</span>
+          <input type="number" min="0" max="20" value="10" id="total_con" />
+        </div>
+        <div class="status_primario">
+          <button class="status_primario_acao" id="int">Inteligência</button>
+          <span id="mod_int">0</span>
+          <input type="number" min="0" max="20" value="10" id="total_int" />
+        </div>
+        <div class="status_primario">
+          <button class="status_primario_acao" id="wis">Sabedoria</button>
+          <span id="mod_wis">0</span>
+          <input type="number" min="0" max="20" value="10" id="total_wis" />
+        </div>
+        <div class="status_primario">
+          <button class="status_primario_acao" id="car">Carisma</button>
+          <span id="mod_car">0</span>
+          <input type="number" min="0" max="20" value="10" id="total_car" />
+        </div>
+      </div>
+      <div class="coluna_de_proficiencias">
+        <div class="caixa_de_bonus_proficiencia">
+          <span id="bonus_proficiencia">2</span>
+          <p>Bônus de proficiência</p>
+        </div>
+        <div class="caixa_save_throws">
+          <p class="titulo_st">Teste de Resistência</p>
+          <div class="st">
+            <span class="st_valor" id="st_str">0</span>
+            <button class="st_acao">Força</button>
+          </div>
+          <div class="st">
+            <span class="st_valor" id="st_dex">0</span>
+            <button class="st_acao">Destreza</button>
+          </div>
+          <div class="st">
+            <span class="st_valor" id="st_con">0</span>
+            <button class="st_acao">Constituição</button>
+          </div>
+          <div class="st">
+            <span class="st_valor" id="st_int">0</span>
+            <button class="st_acao">Inteligência</button>
+          </div>
+          <div class="st">
+            <span class="st_valor" id="st_wis">0</span>
+            <button class="st_acao">Sabedoria</button>
+          </div>
+          <div class="st">
+            <span class="st_valor" id="st_car">0</span>
+            <button class="st_acao">Carisma</button>
+          </div>
+        </div>
+        <div class="caixa_skills">
+          <div class="skill">
+            <input type="checkbox" id="acrobacia"/>
+            <span class="valor_skill" id="valor_acrobacia">0</span>
+            <button class="acao_skill">Acrobacia<span> (DES)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="arcanimsmo"/><span
+              class="valor_skill" id="valor_arcanismo">0</span>
+              <button class="acao_skill">Arcanismo<span> (INT)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="atletismo"/>
+            <span class="valor_skill" id="valor_atletismo">0</span>
+            <button class="acao_skill">Atletismo<span> (FOR)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="enganacao"/>
+            <span class="valor_skill" id="valor_enganacao">0</span>
+            <button class="acao_skill">Enganação<span> (CAR)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="furtividade"/>
+            <span class="valor_skill" id="valor_furtividade">0</span
+            ><button class="acao_skill">Furtividade<span> (DES)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="historia"/>
+            <span class="valor_skill" id="valor_historia">0</span>
+            <button class="acao_skill">História<span> (INT)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="intimidacao"/><span
+              class="valor_skill" id="valor_intimidacao">0</span
+            ><button class="acao_skill">Intimidação<span> (CAR)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="intuicao" /><span
+              class="valor_skill" id="valor_intuicao"
+            >0</span
+            ><button class="acao_skill">Intuição<span> (SAB)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="investigacao"/>
+            <span class="valor_skill" id="valor_investigacao">0</span
+            ><button class="acao_skill">Investigação<span> (INT)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="lidar_com_animais" />
+            <span class="valor_skill" id="valor_lidar_com_animais">0</span
+            ><button class="acao_skill">Lidar com Animais<span> (SAB)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="medicina"/><span
+              class="valor_skill" id="valor_medicina">0</span
+            ><button class="acao_skill">Medicina<span> (SAB)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="natureza" /><span
+              class="valor_skill" id="valor_natureza">0</span
+            ><button class="acao_skill">Natureza<span> (INT)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="percepcao"/><span
+              class="valor_skill" id="valor_percepcao">0</span
+            ><button class="acao_skill">Percepção<span> (SAB)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="persuasao"/><span
+              class="valor_skill" id="valor_persuasao">0</span
+            ><button class="acao_skill">Persuasão<span> (CAR)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="performace"/><span
+              class="valor_skill" id="valor_performace">0</span
+            ><button class="acao_skill">Performace<span> (CAR)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="prestidigitacao"/><span
+              class="valor_skill" id="valor_prestidigitacao">0</span
+            ><button class="acao_skill">Prestidigitação<span> (DES)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="religiao"/><span
+              class="valor_skill" id="valor_religiao">0</span
+            ><button class="acao_skill">Religião<span> (INT)</span></button>
+          </div>
+          <div class="skill">
+            <input type="checkbox" id="sobrevivencia"/><span
+              class="valor_skill" id="valor_sobrevivencia">0</span
+            ><button class="acao_skill">Sobrevivência<span> (SAB)</span></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
