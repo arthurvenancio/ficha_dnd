@@ -282,15 +282,11 @@
     width: 80%;
     border-bottom: var(--espessura-bordas) solid var(--cor-bordas);
 }
-.legenda_ataque_individual{
-    font-style: italic;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: .5em;
-    padding-inline: .5em;
-}
-.ataque_individual{
-    display: flex;
-    justify-content: space-between;
+
+.grid_ataque{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    gap: .25em;
 }
 
