@@ -1,6 +1,7 @@
 :root{
     --cor-bordas:#FF0000;
     --espessura-bordas:1px;
+    --vida:100;
 }
 
 .cabecalho{
@@ -34,11 +35,12 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    min-width: 90px;
 }
 .status_primario{
     display: flex;
     flex-direction: column;
-    width: 10vw;
+    width: 100%;
     align-items: center;
     border: var(--espessura-bordas) solid var(--cor-bordas);
 }
@@ -54,7 +56,8 @@
 .coluna_de_proficiencias{
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    min-width: 225px;
+    max-width: 600px;
     box-sizing: border-box;
     gap: 0.5em;
 }
@@ -100,5 +103,194 @@
     padding: 0.5em;
     display: flex;
     flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    gap: 0.25em;
+    border: var(--espessura-bordas) solid var(--cor-bordas);
+}
+.skill{
+    display: flex;
+    width: inherit;
+}
+.acao_skill{
+    margin-left: auto;
+}
+.titulo_skill{
+    align-self: center;
+    font-style: italic;
+}
+
+.status_mutavel_linha_1{
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.status_mutavel_linha_1 div{
+    width: 100px;
+    height: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em 0.25em;
+    border: var(--espessura-bordas) solid var(--cor-bordas);
     justify-content: space-between;
 }
+.status_mutavel_linha_1 div span{
+    display: flex;
+}
+.status_mutavel_linha_1 div p{
+    margin: 0;
+}
+
+.status_mutavel_linha_2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--espessura-bordas) solid var(--cor-bordas);
+    padding: .25em;
+}
+
+#vida{
+    margin-top: .5em;
+    margin-bottom: .25em;
+    border-radius: 8px;
+    border: var(--espessura-bordas) solid var(--cor-bordas);
+    text-align: center;
+    display: flex;
+    height: 1.85em;
+    width: 100%;
+    
+}
+#vida::before{
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: none;
+    content: "100/100";
+    width: calc(var(--vida)*1%);
+    background-color: hsl( calc(var(--vida) * 1.2) , 80%, 50%);
+}
+
+#vida_temp{
+    margin-bottom: .5em;
+    border-radius: 8px;
+    border: var(--espessura-bordas) solid var(--cor-bordas);
+    text-align: center;
+    display: flex;
+    height: 1em;
+    width: 75%;
+    
+}
+#vida_temp::before{
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: none;
+    content: "10";
+    width: calc(var(--vida)*1%);
+    background-color: gray;
+}
+
+.interacao_vida{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: .5em;
+}
+.interacao_vida_campo{
+    display: flex;
+    flex-direction: column;
+}
+.interacao_vida_campo input{
+    text-align: center;
+}
+
+.descanso_curto{
+    margin: .5em 0;
+    display: flex;
+    width: 100%;
+    height: 3.5em;
+    justify-content: space-between;
+}
+.dados_de_vida_uso{
+    padding-inline: .25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dados_de_vida_uso input{
+    height: calc(100%-1em);
+}
+.dados_de_vida{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    padding-inline: .25em;
+}
+#dado_vida{
+    padding: .25em;
+}
+
+#descanso_longo{
+    width: 100%;
+    padding: .5em 0;
+    margin-bottom: .5em;
+}
+
+.teste_morte{
+    width: 100%;
+}
+.marcador_death_save{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 1em;
+    box-sizing: border-box;
+}
+.death_save_sucesso span,.death_save_falha span{
+    width: 2em;
+    color: grey; 
+
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+#teste_morte_acao{
+    width: 100%;
+    padding: .5em 0;
+}
+
+.ataques{
+    border: var(--espessura-bordas) solid var(--cor-bordas);
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+}
+.titulo_ataques{
+    font-style: italic;
+    align-self: center;
+    margin-top: .25em;
+    text-align: center;
+    width: 80%;
+    border-bottom: var(--espessura-bordas) solid var(--cor-bordas);
+}
+.legenda_ataque_individual{
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5em;
+    padding-inline: .5em;
+}
+.ataque_individual{
+    display: flex;
+    justify-content: space-between;
+}
+
